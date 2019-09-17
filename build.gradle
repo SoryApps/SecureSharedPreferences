@@ -1,45 +1,27 @@
-apply plugin: 'com.android.library'
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-android {
-    compileSdkVersion 28
-
-    resourcePrefix 'secsp_'
-
-    defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 28
-        versionCode 1
-        versionName '1.0.0'
-
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        
     }
-    buildTypes {
-
-        debug {
-            shrinkResources false
-            minifyEnabled false
-            useProguard false
-            debuggable true
-        }
-        release {
-            shrinkResources false
-            minifyEnabled true
-            useProguard true
-            debuggable false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            consumerProguardFiles 'proguard-rules.pro'
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+        
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
     }
 }
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-	
-	implementation 'androidx.security:security-crypto:1.0.0-alpha02'
-	implementation project(':securestoragelibrary')
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }

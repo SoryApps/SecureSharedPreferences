@@ -1,0 +1,2 @@
+include ':app', ':securestoragelibrary', ':securesharedpreferences'
+rootProject.name='SecureSharedPreferencesTest'
