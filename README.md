@@ -8,12 +8,12 @@
 
 ### Introduction
 
-Storing data securely is necessary. This library uses Android Keystore to generate and store cryptographic keys. This is the best and safest way. This library adds a transparent layer of security over the standard SharedPreferences APIs. Values are encrypted/decrypted securely.
+Storing data securely is necessary. This library uses Android Keystore to generate and store cryptographic keys. This is the best and safest way. This library adds a transparent layer of security over the standard [SharedPreferences](https://developer.android.com/training/data-storage/shared-preferences#WriteSharedPreference) APIs. Values are encrypted/decrypted securely.
 
 ### Supported API's
 
-From __Android 6.0 (API Level 23) onwards__: __Symmetric__ key generation and storage in the Android KeyStore is supported. It use [EncryptedSharedPreferences](https://developer.android.com/reference/androidx/security/crypto/EncryptedSharedPreferences)
-From __Android 4.4 (API Level 19) up to Android 5.1 (API Level 22)__: __Asymmetric__ key generation and storage in the Android KeyStore is supported. It use [SecurePreferences](https://github.com/SoryApps/secure-storage-android)
+From __Android 6.0 (API Level 23) onwards: Symmetric__ key generation and storage in the Android KeyStore is supported. It use [EncryptedSharedPreferences](https://developer.android.com/reference/androidx/security/crypto/EncryptedSharedPreferences).
+From __Android 5.1 (API Level 22) downwards up to Android 4.4 (API Level 19): Asymmetric__ key generation and storage in the Android KeyStore is supported. It use [SecurePreferences](https://github.com/SoryApps/secure-storage-android).
 
 ### Usage
 
@@ -39,7 +39,7 @@ Then, use it like the [SharedPreferences](https://developer.android.com/training
 
 Everything about the cryptographic keys such as generating, maintaining and usage is handled internally by the module, so you do not need to worry about it.
 
-Note Android minor M (API 23): getAll() method not supported yet. You can propose an implementation.
+Note to Android L (API 22) downwards: getAll() method not supported yet. You can propose an implementation.
 
 ### Error handling
 The library throws for everything a [SecurityException](https://developer.android.com/reference/java/lang/SecurityException). You can change it to [Log](https://developer.android.com/reference/android/util/Log) class.

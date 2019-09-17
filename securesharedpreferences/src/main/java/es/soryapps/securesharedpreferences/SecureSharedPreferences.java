@@ -74,7 +74,7 @@ public class SecureSharedPreferences implements SharedPreferences
     private SharedPreferences getPreferencesMinf(@NonNull Context context, @NonNull String preferencesId)
     {  return (SharedPreferences) new SecurePreferences(context, preferencesId);  }
 
-    // Note Android minor M (API 23): Not supported yet. You can propose an implementation.
+    // Note to Android L (API 22) downwards: Not supported yet. You can propose an implementation.
     @Override
     public Map<String, ?> getAll()
     {
